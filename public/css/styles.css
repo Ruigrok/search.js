@@ -1,0 +1,65 @@
+nav .brand-logo {
+    color: rgb(250,212,107);
+}
+
+nav ul a:hover {
+    color: rgb(250,212,107);
+}
+
+.nav-extended,  
+.page-footer,
+.btn-large  {
+    background-color: rgb(54,67,71);
+}
+
+.btn-large {
+    border-width: 2px;
+    border: rgb(250,212,107);
+    margin-bottom: 2px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .row {
+      margin-bottom: 15px;
+  }
+
+  .btn-large:hover {
+    /* The alpha value allows the text and background color
+    of the button to still show through. */
+     background-color: rgb(250,212,107);
+     color: rgb(54,67,71);
+   }
+      
+#test1 {
+    margin-top: 15px;
+}
+
+.card .card-content {
+    background-color: rgb(54,67,71);
+}
+
+.card .card-action {
+    background-color: rgb(54,67,71);
+}
+
+.card .card-action 
+a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    color: rgb(250,212,107);    
+}
+
+.card .card-content .card-title {
+    margin-bottom: 0px;
+}
+
+#footer-text {
+    color: rgb(250,212,107);
+}
