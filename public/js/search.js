@@ -1,5 +1,7 @@
 
 function articleDisplay(data) {
+    $('#article-div').empty();
+
     for (var i = 0; i < data.length; i++) {
         var article = $('<div class="col s12 m10 offset-m1">');
         var card = $('<div class="card">');
@@ -9,7 +11,7 @@ function articleDisplay(data) {
 
 
         var action = $('<div class="card-action"><a href="' + data[i].link
-            + '"target="_blank">Open</a><a href="#" class="save" data-id="' + data[i]._id + '">Save</a>');
+            + '"target="_blank">Open</a><a href="#" class="save-article" data-id="' + data[i]._id + '">Save</a>');
 
         content.append(span);
         card.append(content, action);
@@ -19,19 +21,29 @@ function articleDisplay(data) {
     }
 }
 
-$('#echo-js').on("click", function () {
+$('#js, #hacker, #reddit, #echo').on("click", function () {
+    $('.search-btn').removeClass("btn-active");
+    $(this).addClass("btn-active");
+    var source = $(this).attr("value");
     $('#article-div').empty();
-    $.get("/scrape/echojs", function (data) {
+
+    $.get("/scrape/" + source, function(data) {
         articleDisplay(data);
     })
+
+/*     $.get("/scrape/" + source)
+        .then(function () {
+            console.log("hey");
+            $.get("/articles/" + source, function (data) {
+                articleDisplay(data);
+            })
+        }) */
 })
 
-$('#reddit').on("click", function () {
-    $.get("/scrape/reddit", function (data) {
-        articleDisplay(data);
-        $('#article-div').empty();
-    })
-})
+
+
+
+
 
 
 

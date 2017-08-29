@@ -6,6 +6,10 @@ nav ul a:hover {
     color: rgb(250,212,107);
 }
 
+.tabs.tabs-transparent .indicator {
+    background-color: rgb(250,212,107);
+}
+
 .nav-extended,  
 .page-footer,
 .btn-large  {
@@ -38,8 +42,14 @@ body {
      background-color: rgb(250,212,107);
      color: rgb(54,67,71);
    }
-      
-#test1 {
+
+.btn-active {
+    background-color: rgb(250,212,107);
+    color: rgb(54,67,71);
+}
+
+#test1, 
+#test2 {
     margin-top: 15px;
 }
 

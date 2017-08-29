@@ -27,7 +27,7 @@
             <ul class="tabs tabs-transparent">
                 <li class="tab"><a class="active" href="#test1">Article Search</a></li>
                 <li class="tab"><a href="#test2">Saved Articles</a></li>
-            </ul>   
+            </ul>
         </div>
     </nav>
 
@@ -35,21 +35,31 @@
         <div id="test1" class="col s12">
             <div class="row">
                 <div class="col s8 offset-s1">
-                    <a class="waves-effect waves-light btn-large">JavaScript.com</a>
-                    <a class="waves-effect waves-light btn-large"><i class="fa fa-medium" aria-hidden="true"></i>  Hackernoon</a>
-                    <a class="waves-effect waves-light btn-large" id="reddit"><i class="fa fa-reddit-alien" aria-hidden="true"></i>  Reddit</a>
-                    <a class="waves-effect waves-light btn-large" id="echo-js">Echo JS</a>
+                    <a class="waves-effect waves-light btn-large search-btn" id="js" value="js">JavaScript.com</a>
+                    <a class="waves-effect waves-light btn-large search-btn" id="hacker" value="hacker"><i class="fa fa-medium" aria-hidden="true"></i>  Hackernoon</a>
+                    <a class="waves-effect waves-light btn-large search-btn" id="reddit" value="reddit"><i class="fa fa-reddit-alien" aria-hidden="true"></i>  Reddit</a>
+                    <a class="waves-effect waves-light btn-large search-btn" id="echo" value="echo">Echo JS</a>
                 </div>
             </div>
             <div class="row" id="article-div">
             </div>
         </div>
 
-        <div id="test2" class="col s12">    
+        <div id="test2" class="col s12">
+            <div class="row">
+                <div class="col s8 offset-s1">
+                    <a class="waves-effect waves-light btn-large saved-btn" id="js-saved" value="js">JavaScript.com</a>
+                    <a class="waves-effect waves-light btn-large saved-btn" id="hacker-saved" value="hacker"><i class="fa fa-medium" aria-hidden="true"></i>  Hackernoon</a>
+                    <a class="waves-effect waves-light btn-large saved-btn" id="reddit-saved" value="reddit"><i class="fa fa-reddit-alien" aria-hidden="true"></i>  Reddit</a>
+                    <a class="waves-effect waves-light btn-large saved-btn" id="echo-saved" value="echo">Echo JS</a>
+                </div>
+            </div>
+            <div class="row" id="saved-div">
+            </div>
         </div>
 
 
-   </main>
+    </main>
 
     <footer class="page-footer">
         <div class="container">
@@ -62,11 +72,13 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://use.fontawesome.com/8e2f8bac55.js"></script>
-    <script type="text/javascript" src="js/manage.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/save.js"></script>
+    <script type="text/javascript" src="js/comment.js"></script>
+
 
 </body>
 

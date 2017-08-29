@@ -27,33 +27,7 @@ app.use(methodOverride("_method"));
 // Make public a static dir
 app.use(express.static("public"));
 
-//Set Handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-// Requiring our Note and Article models
-var Comment = require("./models/Comment.js");
-var Article = require("./models/Article.js");
-
-/* // Set mongoose to leverage built in JavaScript ES6 Promises
-mongoose.Promise = Promise;
-
-// Database configuration with mongoose
-mongoose.connect("mongodb://localhost/search.js");
-var db = mongoose.connection;
- */
-// Show any mongoose errors
-/* db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
-});
-
-// Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
-}); */
-
-
-var mongoose = require('mongoose');
+// Set up Mongoose
 mongoose.Promise = global.Promise;
 
 var db = mongoose.connect('mongodb://localhost/searchJS', {
@@ -70,8 +44,11 @@ db
 
 
 // Routes
-require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app); 
+require("./routes/api-search-routes.js")(app);
+require("./routes/api-save-routes.js")(app); 
+require("./routes/api-comment-routes")(app);
+
 
 
 // ================================================
