@@ -4,8 +4,9 @@
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <!--Let browser know website is optimized for mobile-->
@@ -61,6 +62,36 @@
 
     </main>
 
+    <div id="note-modal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h5 id="modal-header"></h5>
+
+            <div>
+                <div class="row">
+
+                    <div class="col s12" id="comment-container">
+                    </div>
+
+                    <div class="input-field col s10">
+                        <i class="material-icons prefix">chat</i>
+                        <input id="icon_prefix" type="text" class="validate userInp">
+                        <label for="icon_prefix">Title</label>
+                    </div>
+
+                    <br>
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea userInp2"></textarea>
+                        <label for="textarea1">Comment</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="waves-effect waves-light btn" id="add-comment" data-id="59a6fa2c8934c48c37d09b2c" value="js">Add Comment</a>
+            <a class="waves-effect waves-light btn modal-action modal-close" value="js">Close</a>
+        </div>
+    </div>
+
     <footer class="page-footer">
         <div class="container">
             <div class="row">
@@ -71,9 +102,8 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://use.fontawesome.com/8e2f8bac55.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
     <script type="text/javascript" src="js/save.js"></script>

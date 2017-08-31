@@ -20,12 +20,14 @@ var ArticleSchema = new Schema({
 
   saved: {type: Boolean, default: 0},
   
-  comments: [{
+  notes: [{
     type: Schema.Types.ObjectId,
-    ref: "Comment"
+    ref: "Note"
   }]
 });
 
 var Article = mongoose.model("Article", ArticleSchema);
 
 module.exports = Article;
+
+

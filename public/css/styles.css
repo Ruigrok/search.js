@@ -12,14 +12,20 @@ nav ul a:hover {
 
 .nav-extended,  
 .page-footer,
-.btn-large  {
+.btn-large,
+.btn  {
     background-color: rgb(54,67,71);
 }
 
-.btn-large {
+.btn-large,
+.btn {
     border-width: 2px;
     border: rgb(250,212,107);
     margin-bottom: 2px;
+}
+
+.modal .modal-footer .btn {
+    margin-left: 2px;
 }
 
 body {
@@ -36,7 +42,8 @@ body {
       margin-bottom: 15px;
   }
 
-  .btn-large:hover {
+  .btn-large:hover,
+  .btn:hover {
     /* The alpha value allows the text and background color
     of the button to still show through. */
      background-color: rgb(250,212,107);
@@ -73,3 +80,29 @@ a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
 #footer-text {
     color: rgb(250,212,107);
 }
+
+.modal .modal-footer .btn-large {
+    margin: 6px 0;
+    margin-left: 2px;
+}
+
+.input-field .prefix.active {
+    color: rgb(54,67,71);    
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: rgb(54,67,71) !important;
+   }
+
+/* label underline focus color */
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid rgb(54,67,71) !important;
+    box-shadow: 0 1px 0 0 rgb(54,67,71) !important;
+   }
+
+/*    .card .card-action.comment-card {
+    color: rgb(250, 212, 107);
+    font-size: 13px;
+    cursor: auto;
+} */

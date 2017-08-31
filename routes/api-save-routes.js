@@ -1,5 +1,5 @@
 var Article = require("../models/Article.js");
-var Comment = require("../models/Comment.js");
+var Note = require("../models/Note.js");
 
 module.exports = function (app) {
 

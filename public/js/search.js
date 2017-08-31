@@ -31,13 +31,6 @@ $('#js, #hacker, #reddit, #echo').on("click", function () {
         articleDisplay(data);
     })
 
-/*     $.get("/scrape/" + source)
-        .then(function () {
-            console.log("hey");
-            $.get("/articles/" + source, function (data) {
-                articleDisplay(data);
-            })
-        }) */
 })
 
 
