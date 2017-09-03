@@ -9,7 +9,7 @@ $(document).on("click", ".save-article", function (event) {
     $.post("/save/" + articleId, function (data) {
         savedCard.addClass("valign-bottom");
         savedCard.html('<i class="material-icons">check_box</i>Saved')
-        
+
     })
 });
 
@@ -42,7 +42,12 @@ $('#js-saved, #hacker-saved, #reddit-saved, #echo-saved').on("click", function (
     var source = $(this).attr("value");
 
     $.get("/saved/" + source, function (data) {
-        displaySaved(data);
+        if (data.length > 0) {
+            displaySaved(data);
+        } else {
+            $('#saved-div').html('<div class="col m2 offset-m3"><p class="center-align">No Saved Articles<p></div>')
+        }
+
     })
 })
 
@@ -52,6 +57,6 @@ $(document).on("click", ".remove", function (event) {
     var articleId = $(this).attr("data-id");
 
     $.post("/remove/" + articleId, function (data) {
-        $("#"+ articleId).remove();
+        $("#" + articleId).remove();
     })
 });
