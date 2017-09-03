@@ -16,7 +16,6 @@ module.exports = function (app) {
                 result.title = $(this).find('a').text();
                 result.link = $(this).find('div').last('div').find('a').attr('href');
                 result.source = "js";
-                result.saved = false;
 
                 var query = { "link": result.link }
                 var promise = Article.findOneAndUpdate(query, result, { upsert: true }, function (err, doc) {
@@ -55,7 +54,6 @@ module.exports = function (app) {
                 result.title = $(this).find('h3').find('div').text();
                 result.link = $(this).find('a').attr('href');
                 result.source = "hacker";
-                result.saved = false;
 
                 var query = { "link": result.link }
                 var promise = Article.findOneAndUpdate(query, result, { upsert: true }, function (err, doc) {
@@ -100,8 +98,6 @@ module.exports = function (app) {
                 result.title = $(element).text();
                 result.link = linkVal;
                 result.source = "reddit";
-                result.saved = false;
-                console.log(result.link);
 
                 var query = { "link": result.link }
                 var promise = Article.findOneAndUpdate(query, result, { upsert: true }, function (err, doc) {
@@ -140,7 +136,6 @@ module.exports = function (app) {
                 result.title = $(this).children("a").text();
                 result.link = $(this).children("a").attr("href");
                 result.source = "echo";
-                result.saved = false;
 
                 var query = { "link": result.link }
                 var promise = Article.findOneAndUpdate(query, result, { upsert: true }, function (err, doc) {

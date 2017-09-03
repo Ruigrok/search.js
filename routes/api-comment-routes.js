@@ -1,5 +1,6 @@
 var Article = require("../models/Article.js");
 var Note = require("../models/Note.js");
+var moment = require('moment');
 
 module.exports = function (app) {
 
@@ -13,12 +14,11 @@ module.exports = function (app) {
                     console.log(error);
                 }
                 else {
-                    console.log(doc);
-                    //console.log(doc[0])
                     res.json(doc);
                 }
             });
     });
+
 
     // Create a new note or replace an existing note
     app.post("/article/:id", function (req, res) {

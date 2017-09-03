@@ -2,10 +2,14 @@
 // Save an article
 $(document).on("click", ".save-article", function (event) {
     event.preventDefault();
+    var savedCard = $(this);
     var articleId = $(this).attr("data-id");
 
+
     $.post("/save/" + articleId, function (data) {
-        //modal?
+        savedCard.addClass("valign-bottom");
+        savedCard.html('<i class="material-icons">check_box</i>Saved')
+        
     })
 });
 
@@ -18,7 +22,6 @@ function displaySaved(data) {
         var content = $('<div class="card-content white-text">')
         var span = $('<span class="card-title">');
         span.text(data[i].title);
-
 
         var action = $('<div class="card-action"><a href="' + data[i].link
             + '"target="_blank">Open</a><a href="#" class="article-comments" data-id="' + data[i]._id + '">Notes</a>'

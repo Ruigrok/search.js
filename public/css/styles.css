@@ -66,6 +66,25 @@ body {
 
 .card .card-action {
     background-color: rgb(54,67,71);
+
+}
+
+.card .card-content.comment-content .card-title {
+    line-height: 24px;
+    font-size: 18px;
+}
+
+.card .card-content.comment-content {
+    padding: 12px !important;
+}
+
+.card .card-action.comment-action {
+    padding: 10px !important;
+}
+
+.card .card-action.comment-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    margin-right: 12px;
+
 }
 
 .card .card-action 
@@ -76,6 +95,12 @@ a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
 .card .card-content .card-title {
     margin-bottom: 0px;
 }
+
+.valign-bottom {
+    display: inline-flex;
+    vertical-align: bottom;
+    align-items: center;
+  }
 
 #footer-text {
     color: rgb(250,212,107);
@@ -101,8 +126,3 @@ a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
     box-shadow: 0 1px 0 0 rgb(54,67,71) !important;
    }
 
-/*    .card .card-action.comment-card {
-    color: rgb(250, 212, 107);
-    font-size: 13px;
-    cursor: auto;
-} */

@@ -3,10 +3,13 @@ var Schema = mongoose.Schema;
 
 var NoteSchema = new Schema({
   // title: a string
-  title: {
+  contributor: {
     type: String
   },
-  // body: a string
+  date: {
+    type: Date,
+    default: Date.now
+  },
   body: {
     type: String
   }
