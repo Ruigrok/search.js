@@ -45,30 +45,46 @@ function displayComment(data) {
 
 
 // When you click the savenote button
-$(document).on("click", "#add-comment", function () {
-    var articleId = $(this).attr("data-id");
+$(document).on("click", '#add-comment', function () {
+    if ($('.userInp').val() != "" && $('.userInp2').val() != "") {
+        var articleId = $(this).attr("data-id");
 
-    var newComment = {
-        "contributor": $('.userInp').val(),
-        "body": $('.userInp2').val()
+        var newComment = {
+            "contributor": $('.userInp').val(),
+            "body": $('.userInp2').val()
+        }
+
+        $.post("/article/" + articleId, newComment, function (data) {
+            console.log(data);
+            var tempNote = {
+                "_id": "temp",
+                "contributor": newComment.contributor,
+                "body": newComment.body,
+                "date": Date.now()
+            }
+            displayComment(tempNote);
+        })
+
+        $('#textarea1, #icon_prefix').val('');
+        $('#textarea1, #icon_prefix').trigger('autoresize');
     }
-
-    $.post("/article/" + articleId, newComment, function (data) {
-        console.log(data);
-        var newNote = data.notes[data.notes.length - 1];
-        displayComment(data);
-    })
-
-    $('#textarea1, #icon_prefix').val('');
-    $('#textarea1, #icon_prefix').trigger('autoresize');
 });
 
-$(document).on("click", "#delete", function () {
+$(document).on("click", '#delete', function () {
+    $('#comment-container').empty();
     var commentId = $(this).attr("data-id");
+    var articleId = $('#add-comment').attr("data-id");
 
-    $.post("/delete/" + commentId, commentId, function (data) {
-        $('#' + commentId).remove();
-    })
+    $.post("/delete/" + commentId, commentId)
+        .then($.get("/article/" + articleId, function (data) {
+            $('#modal-header').text(data[0].title);
+            console.log(data);
+            for (var i = 0; i < data[0].notes.length; i++) {
+                displayComment(data[0].notes[i])
+
+            }
+        }))
+
 });
 
 
