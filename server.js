@@ -30,11 +30,11 @@ app.use(express.static("public"));
 // Set up Mongoose
 mongoose.Promise = global.Promise;
 
-// var db = mongoose.connect('mongodb://heroku_0gh8x77k:od02dkqvubeoavd0m0sdjuqt9j@ds121674.mlab.com:21674/heroku_0gh8x77k');
+var db = mongoose.connect('mongodb://heroku_0gh8x77k:od02dkqvubeoavd0m0sdjuqt9j@ds121674.mlab.com:21674/heroku_0gh8x77k');
 
-var db = mongoose.connect('mongodb://localhost/searchJS', {
+/* var db = mongoose.connect('mongodb://localhost/searchJS', {
     useMongoClient: true
-});
+}); */
 
 db
     .then(function (db) {
